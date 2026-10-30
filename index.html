@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102e52">
+  <meta name="description" content="Informasi program studi Diploma, Sarjana, dan Magister Universitas Pelita Bangsa.">
+  <title>Program Studi | Universitas Pelita Bangsa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b3b;
+      --muted: #5b6d7c;
+      --navy: #102e52;
+      --blue: #1b5794;
+      --blue-soft: #eaf2f8;
+      --gold: #f3bb42;
+      --paper: #f7f9fa;
+      --white: #fff;
+      --line: #dce5eb;
+      --green: #2f7867;
+      font-family: "DM Sans", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header { background: var(--navy); color: var(--white); }
+    .header-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 54px; height: 54px; object-fit: contain; background: white; border-radius: 50%; }
+    .brand-name { font: 800 15px/1.2 "Manrope", sans-serif; letter-spacing: 0; }
+    .brand-name span { display: block; margin-top: 5px; color: #c7d7e5; font: 500 11px/1.2 "DM Sans", sans-serif; }
+    .main-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 36px); }
+    .main-nav a { color: #e6eef5; font-size: 14px; font-weight: 600; text-decoration: none; }
+    .main-nav a:hover, .main-nav a:focus-visible { color: var(--gold); }
+    .header-rule { height: 4px; background: var(--gold); }
+
+    .intro { padding: 58px 0 34px; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; letter-spacing: 0; }
+    h1 { max-width: 760px; margin-bottom: 14px; color: var(--navy); font-size: clamp(34px, 5vw, 54px); line-height: 1.12; }
+    .intro-copy { max-width: 720px; margin-bottom: 0; color: var(--muted); font-size: 17px; }
+
+    .campus-figure { margin: 0 0 56px; overflow: hidden; background: #dce8ee; }
+    .campus-figure img { width: 100%; height: clamp(230px, 39vw, 430px); object-fit: cover; }
+    .campus-figure figcaption { padding: 11px 16px; color: #435969; background: var(--white); font-size: 13px; }
+
+    .content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; align-items: start; gap: 54px; padding-bottom: 64px; }
+    .section-label { margin-bottom: 8px; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+    h2 { margin-bottom: 18px; color: var(--navy); font-size: 29px; line-height: 1.25; }
+    .overview { max-width: 700px; margin-bottom: 18px; color: var(--muted); }
+    .study-heading { margin-top: 42px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .program-group { margin: 26px 0 0; }
+    .program-group h3 { display: flex; align-items: center; gap: 11px; margin-bottom: 13px; color: var(--navy); font-size: 18px; }
+    .program-group h3::before { width: 4px; height: 21px; background: var(--gold); content: ""; }
+    .program-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin: 0; padding: 0; list-style: none; }
+    .program-list li { padding: 10px 0; border-bottom: 1px solid var(--line); color: #344b5c; }
+    .all-programs { display: inline-flex; align-items: center; gap: 8px; margin-top: 27px; color: var(--blue); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+
+    .admissions { padding: 24px; border-top: 4px solid var(--gold); background: var(--white); box-shadow: 0 12px 32px rgb(23 43 59 / 7%); }
+    .admissions img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 20%; background: var(--blue-soft); }
+    .leader-caption { margin: 17px 0 25px; text-align: center; }
+    .leader-caption strong { display: block; color: var(--navy); font: 700 15px/1.5 "Manrope", sans-serif; }
+    .leader-caption span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .5px; }
+    .admissions h2 { margin: 0 0 10px; font-size: 20px; }
+    .admissions-copy { margin-bottom: 18px; color: var(--muted); font-size: 14px; }
+    .action-link { display: block; margin-top: 10px; padding: 12px 16px; color: var(--white); background: var(--blue); font-size: 14px; font-weight: 700; text-align: center; text-decoration: none; }
+    .action-link:hover, .action-link:focus-visible { background: var(--navy); }
+    .contact { margin: 23px 0 0; padding-top: 17px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; text-align: center; }
+    .contact strong { color: var(--ink); }
+    .contact a { color: var(--blue); text-decoration: none; }
+
+    .site-footer { padding: 25px 0; color: #e2ebf3; background: var(--navy); font-size: 13px; text-align: center; }
+    .site-footer strong { color: white; }
+    .site-footer p { margin: 3px 0; }
+    .site-footer a { color: white; }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 32px, 600px); }
+      .header-inner { min-height: 76px; flex-wrap: wrap; gap: 10px; padding-block: 10px; }
+      .brand img { width: 46px; height: 46px; }
+      .main-nav { width: 100%; justify-content: space-between; gap: 10px; padding: 4px 0 8px; }
+      .main-nav a { font-size: 12px; }
+      .intro { padding-top: 40px; }
+      .intro-copy { font-size: 16px; }
+      .campus-figure { margin-bottom: 40px; }
+      .content-grid { grid-template-columns: 1fr; gap: 36px; }
+      .admissions { width: min(100%, 430px); }
+    }
+    @media (max-width: 460px) {
+      .container { width: calc(100% - 28px); }
+      .brand-name { font-size: 13px; }
+      .main-nav { gap: 6px; }
+      .main-nav a { font-size: 11px; }
+      .program-list { grid-template-columns: 1fr; }
+      .campus-figure img { height: 230px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://pelitabangsa.ac.id/" aria-label="Universitas Pelita Bangsa, beranda">
+        <img src="Logo-Universitas-Pelita-Bangsa.png" width="54" height="54" alt="Logo Universitas Pelita Bangsa">
+        <span class="brand-name">UNIVERSITAS PELITA BANGSA<span>Unggul, berdaya saing, berakhlak mulia</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="https://pelitabangsa.ac.id/">Beranda</a>
+        <a href="https://pelitabangsa.ac.id/">Profil</a>
+        <a href="#program-studi">Akademik</a>
+        <a href="https://sibara.pelitabangsa.ac.id/pengumuman">Kabar</a>
+        <a href="https://sibara.pelitabangsa.ac.id/">Admisi</a>
+      </nav>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main>
+    <section class="container intro" aria-labelledby="page-title">
+      <p class="eyebrow">Akademik · Cikarang, Kabupaten Bekasi</p>
+      <h1 id="page-title">Temukan program studi yang tepat untuk masa depanmu.</h1>
+      <p class="intro-copy">Universitas Pelita Bangsa menyediakan pilihan pendidikan Diploma (D3), Sarjana (S1), dan Magister (S2). Berikut program studi yang tercantum pada portal penerimaan mahasiswa baru resmi UPB.</p>
+    </section>
+
+    <figure class="container campus-figure">
+      <img src="gedung upb.jpg" alt="Gedung kampus Universitas Pelita Bangsa" fetchpriority="high">
+      <figcaption>Gedung Universitas Pelita Bangsa · Cikarang, Kabupaten Bekasi</figcaption>
+    </figure>
+
+    <div class="container content-grid">
+      <section aria-labelledby="program-studi">
+        <p class="section-label">Tentang kampus</p>
+        <h2>Universitas Pelita Bangsa</h2>
+        <p class="overview">Universitas Pelita Bangsa berlokasi di kawasan Cikarang, Kabupaten Bekasi. Calon mahasiswa dapat memilih program pendidikan dan jalur pendaftaran sesuai kebutuhan melalui portal penerimaan mahasiswa baru universitas.</p>
+        <p class="overview">Pilihan sistem perkuliahan antara lain reguler pagi, reguler malam, reguler akhir pekan, dan Rekognisi Pembelajaran Lampau (RPL). Ketersediaan pilihan dapat berbeda berdasarkan program studi dan periode penerimaan.</p>
+
+        <div class="study-heading">
+          <p class="section-label">Pilihan akademik</p>
+          <h2 id="program-studi">Program Studi</h2>
+        </div>
+
+        <section class="program-group" aria-labelledby="d3-title">
+          <h3 id="d3-title">Diploma (D3)</h3>
+          <ul class="program-list"><li>Akuntansi</li></ul>
+        </section>
+        <section class="program-group" aria-labelledby="s1-title">
+          <h3 id="s1-title">Sarjana (S1)</h3>
+          <ul class="program-list">
+            <li>Kewirausahaan</li>
+            <li>Ekonomi Syariah</li>
+            <li>Teknik Informatika</li>
+            <li>Manajemen</li>
+            <li>Teknik Industri</li>
+            <li>Bisnis Digital</li>
+            <li>Pendidikan Guru Pendidikan Anak Usia Dini</li>
+            <li>Teknik Lingkungan</li>
+            <li>Pendidikan Guru Sekolah Dasar</li>
+            <li>Hukum</li>
+            <li>Teknik Sipil</li>
+            <li>Arsitektur</li>
+            <li>Bimbingan dan Konseling Pendidikan Islam</li>
+            <li>Pendidikan Ilmu Pengetahuan Alam</li>
+            <li>Manajemen Pendidikan Islam</li>
+            <li>Teknologi Hasil Pertanian</li>
+          </ul>
+        </section>
+        <section class="program-group" aria-labelledby="s2-title">
+          <h3 id="s2-title">Magister (S2)</h3>
+          <ul class="program-list"><li>Magister Manajemen</li></ul>
+        </section>
+        <a class="all-programs" href="https://sibara.pelitabangsa.ac.id/program-studi">Lihat informasi lengkap semua program studi <span aria-hidden="true">→</span></a>
+      </section>
+
+      <aside class="admissions" aria-label="Informasi rektor dan penerimaan mahasiswa baru">
+        <img src="foto rektor upb.png" alt="Rektor Universitas Pelita Bangsa">
+        <p class="leader-caption"><strong>Hamzah Muhammad Mardi Putra, S.K.M., M.M., D.B.A.</strong><span>REKTOR UNIVERSITAS PELITA BANGSA</span></p>
+        <h2>Informasi Penerimaan Mahasiswa Baru</h2>
+        <p class="admissions-copy">Pilihan program studi, jalur pendaftaran, dan petunjuk penerimaan mahasiswa baru tersedia melalui portal resmi UPB.</p>
+        <a class="action-link" href="https://sibara.pelitabangsa.ac.id/program-studi">Selengkapnya</a>
+        <a class="action-link" href="https://sibara.pelitabangsa.ac.id/">Daftar Online</a>
+        <p class="contact"><strong>Kontak PMB</strong><br>0811-1588-831<br><a href="mailto:marcom@pelitabangsa.ac.id">marcom@pelitabangsa.ac.id</a></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>UNIVERSITAS PELITA BANGSA</strong></p>
+      <p>Jl. Inspeksi Kalimalang, Tegal Danas, arah Deltamas, Cikarang Pusat, Kabupaten Bekasi</p>
+      <p>Sumber informasi: <a href="https://sibara.pelitabangsa.ac.id/">Portal PMB Universitas Pelita Bangsa</a></p>
+    </div>
+  </footer>
+</body>
+</html>
